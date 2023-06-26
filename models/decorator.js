@@ -31,8 +31,7 @@ Decorator.prototype.paintRoom = function (room) {
     let areaToPaint = room.area;
     if (this.enoughPaint(room)) {
         room.painted = true;
-        for (i=0; i < this.paintCans.length; i++) {
-            // console.log(`areaCheck: ${areaToPaint}`);
+        for (i=0; i < this.paintCans.length && areaToPaint > 0; i++) {
             if (this.paintCans[i].litres < areaToPaint) {
                 areaToPaint -= this.paintCans[i].litres;
                 this.paintCans[i].litres = 0;
